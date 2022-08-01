@@ -42,7 +42,7 @@ def handle_pkt(pkt):
 
 
 def main():
-    ifaces = filter(lambda i: 'eth' in i, os.listdir('/sys/class/net/'))
+    ifaces = list(filter(lambda i: 'eth' in i, os.listdir('/sys/class/net/')))
     iface = ifaces[0]
     print("sniffing on {}".format(iface))
     sys.stdout.flush()
